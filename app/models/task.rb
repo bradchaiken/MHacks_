@@ -6,12 +6,12 @@ class Task < ActiveRecord::Base
     description :string
     timestamps
   end
-   attr_accessible :description, :story, :story_id, :task_assignments, :users
+  attr_accessible :description, :story, :story_id, :task_assignments, :users, :tasks
 
   belongs_to :story, :inverse_of => :tasks, :counter_cache => true
 
   has_many :task_assignments, :dependent => :destroy, :inverse_of => :task
-  has_many :users, :through => :task_assignments
+  has_many :users, :through => :task_assignments, :accessible => true, :dependent => :destroy
 
   # --- Permissions --- #
 
@@ -20,11 +20,11 @@ class Task < ActiveRecord::Base
   end
 
   def update_permitted?
-    acting_user.administrator?
+     acting_user.signed_up?
   end
 
   def destroy_permitted?
-    acting_user.administrator?
+    acting_user.signed_up?
   end
 
   def view_permitted?(field)

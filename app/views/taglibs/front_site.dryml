@@ -9,7 +9,57 @@
 <include gem='hobo_bootstrap'/>
 
 <include src="taglibs/auto/rapid/cards"/>
-<include src="taglibs/auto/rapid/pages"/>
-<include src="taglibs/auto/rapid/forms"/>
+ <include src="taglibs/auto/rapid/pages"/>
+ <include src="taglibs/auto/rapid/forms"/>
+ 
+ <include src="application"/>
 
-<include src="application"/>
+
+<extend tag="card" for="Task">
+  <old-card merge>
+    <append-body:>
+    <div class="users">
+      Assigned users: <repeat:users join=", "><a/></repeat><else>None</else>
+    </div>
+    </append-body:>
+  </old-card>
+</extend>
+
+
+<!-- ====== Hack Pages Index ====== -->
+
+<def tag="index-page" for="Hack">
+  <page merge title="#{ht 'hack.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page hack" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="hack.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="hack.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+
+      <a action="new" to="&model" param="new-link">
+        <ht key="hack.actions.new">New Hack</ht>
+      </a>
+<div class="hack_index">
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+</div>
+
+
+    </content-body:>
+  </page>
+</def>
