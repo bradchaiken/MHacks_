@@ -4,7 +4,6 @@
  * or plugins referenced from here or placed in the front/ directory
  * will be included.
  *
- *= require_self
  *= require application
  *= require hobo_rapid
  *= require hobo_jquery
@@ -12,4 +11,30 @@
  *= require jquery-ui/redmond
  *= require hobo_bootstrap
  *= require_tree ./front
+ *= require_self
 */
+
+/* Google Web Fonts */
+@import url(http://fonts.googleapis.com/css?family=Fondamento);
+@import url(http://fonts.googleapis.com/css?family=Iceland);
+
+
+/* Main CSS */
+html, body {
+	background-color: #A9D0F5;
+}
+
+h1 { font-family: 'Fondamento', cursive;
+	font-size: 100px; margin: 25px 0; line-height: 1em; color: #dd4a35; text-shadow:3px 3px 3px #000000;
+	text-overflow: ellipsis;
+}
+
+h2 { font-family: 'Iceland', cursive;
+}
+
+h3 { font-family: 'Iceland', cursive;
+font-size: 40px; 
+color: #DD9D36;
+text-shadow:1px 1px 1px #000000;
+}
+

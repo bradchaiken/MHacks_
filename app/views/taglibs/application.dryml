@@ -1,3 +1,9 @@
 <!-- this file is included by front_site.dryml, admin_site.dryml et al, so
 you can place common code in this file. -->
 
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Hack"><ht key="hack.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
