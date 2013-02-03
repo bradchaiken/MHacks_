@@ -49,6 +49,8 @@ gem "hobo_jquery_ui", "2.0.0.pre7"
 gem "hobo_bootstrap", "2.0.0.pre7"
 gem "jquery-ui-themes", "~> 0.0.4"
 
+
+
 group :production do
 	gem 'pg'
 end
