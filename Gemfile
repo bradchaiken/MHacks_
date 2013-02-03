@@ -4,8 +4,9 @@ gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+group :development do 
 gem 'sqlite3'
+end
 
 
 # Gems used only for assets and not required
@@ -47,3 +48,7 @@ gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
 gem "hobo_jquery_ui", "2.0.0.pre7"
 gem "hobo_bootstrap", "2.0.0.pre7"
 gem "jquery-ui-themes", "~> 0.0.4"
+
+group :production do
+	gem 'pg'
+end
