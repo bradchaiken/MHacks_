@@ -5,7 +5,7 @@ GIT
     will_paginate (3.0.4.hobo)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.11)
       actionpack (= 3.2.11)
