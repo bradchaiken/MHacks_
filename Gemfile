@@ -51,6 +51,3 @@ gem "jquery-ui-themes", "~> 0.0.4"
 
 
 
-group :production do
-	gem 'pg'
-end
